@@ -27,3 +27,8 @@ DATABASES = {
         'OPTIONS': {'charset': 'utf8'},
     }
 }
+
+REDIS = {
+    "host": "localhost",
+    "port": 6379,
+}

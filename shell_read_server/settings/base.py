@@ -134,5 +134,11 @@ USERNAME_MAX_LENGTH = 30
 CATEGORY_MAX_LENGTH = 30
 POST_MAX_LENGTH = 300
 
+# 传入用户名为空时
 DEFAULT_USERNAME = "anonymous"
+# 传入类别名为空时
 DEFAULT_CATEGORY_NAME = "null"
+
+# 缓存所有使用的数据的 id，从这里随机选一个post
+RANDOM_POSTS_KEY = "shell_read:random_posts"
+RANDOM_POSTS_EXPIRE = 3600
