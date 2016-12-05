@@ -49,7 +49,7 @@ def post_view(request):
                 "content": post.content,
                 "category": post.category.name,
                 "read_count": read_count,
-                "created_at": post.created_at,
+                "created_at": post.created_at.strftime('%Y-%m-%d %H:%M:%S'),
             }))
 
     elif request.method == 'POST':
