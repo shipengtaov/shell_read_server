@@ -22,7 +22,7 @@ class Category(models.Model):
 class Post(models.Model):
     """Post
     """
-    username = models.CharField(max_length=30, null=False)
+    nickname = models.CharField(max_length=30, null=False)
     content = models.TextField(blank=False, null=False)
     img_url = models.CharField(max_length=500, blank=True, null=False)
     category = models.ForeignKey(Category)

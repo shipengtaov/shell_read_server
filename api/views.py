@@ -20,7 +20,7 @@ def post_view(request):
     cache_count = redis_con.scard(cache_key)
 
     if request.method == 'GET':
-        username = request.GET.get("username", "").strip()
+        nickname = request.GET.get("nickname", "").strip()
         category_name = request.GET.get("category", "").strip()
 
         # save cache
@@ -45,7 +45,7 @@ def post_view(request):
         post.save()
 
         return JsonResponse(dict(success=True, data={
-                "username": post.username,
+                "nickname": post.nickname,
                 "content": post.content,
                 "category": post.category.name,
                 "read_count": read_count,
@@ -53,20 +53,20 @@ def post_view(request):
             }))
 
     elif request.method == 'POST':
-        username = request.POST.get('username',
-                                    settings.DEFAULT_USERNAME).strip()
+        nickname = request.POST.get('nickname',
+                                    settings.DEFAULT_NICKNAME).strip()
         category_name = request.POST.get(
                             'category',
                             settings.DEFAULT_CATEGORY_NAME).strip()
         content = request.POST.get('content', '').strip()
         img_url = request.POST.get('img_url', '').strip()
 
-        if not username or not category_name or not content:
+        if not nickname or not category_name or not content:
             return JsonResponse(dict(success=False, msg=u'信息不完整'))
-        if len(username) > settings.USERNAME_MAX_LENGTH:
+        if len(nickname) > settings.NICKNAME_MAX_LENGTH:
             return JsonResponse(dict(
                     success=False,
-                    msg=u'用户名最长为 %d 个字符' % settings.USERNAME_MAX_LENGTH))
+                    msg=u'用户名最长为 %d 个字符' % settings.NICKNAME_MAX_LENGTH))
         if len(category_name) > settings.CATEGORY_MAX_LENGTH:
             return JsonResponse(dict(
                     success=False,
@@ -84,7 +84,7 @@ def post_view(request):
             category = Category(name=category_name, post_count=1)
         category.save()
 
-        post = Post(username=username, content=content, img_url=img_url,
+        post = Post(nickname=nickname, content=content, img_url=img_url,
                     category=category)
         post.save()
         # save to cache

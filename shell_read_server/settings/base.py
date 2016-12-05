@@ -130,12 +130,12 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 # 限制字数
-USERNAME_MAX_LENGTH = 30
+NICKNAME_MAX_LENGTH = 30
 CATEGORY_MAX_LENGTH = 30
 POST_MAX_LENGTH = 300
 
 # 传入用户名为空时
-DEFAULT_USERNAME = "anonymous"
+DEFAULT_NICKNAME = "anonymous"
 # 传入类别名为空时
 DEFAULT_CATEGORY_NAME = "null"
 
