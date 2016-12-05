@@ -10,7 +10,7 @@ class Category(models.Model):
                             blank=False, null=False)
     post_count = models.IntegerField(default=0)
     deleted = models.BooleanField(default=False)
-    created_at = models.DateTimeField(auto_now=True)
+    created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
         db_table = 'category'
@@ -30,7 +30,7 @@ class Post(models.Model):
     read_count = models.IntegerField(default=0)
     # 是否已删除
     deleted = models.BooleanField(default=False)
-    created_at = models.DateTimeField(auto_now=True)
+    created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
         db_table = 'posts'
