@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+	<title>Shell Read</title>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/styles/solarized-dark.min.css">
+	<style type="text/css">
+		body{
+			color: #F0F0F0;
+			/*background: #600;*/
+			background: #36465d;
+			margin: 0 auto;
+			width: 52em;
+			font-family: PT Sans, DejaVu, Sans, Arial, sans;
+		}
+		/* from https://flask-login.readthedocs.io/en/latest/ */
+		.documentwrapper{
+			float: left;
+			width: 100%;
+		}
+		.bodywrapper{
+			margin: 40px auto 0 auto;
+			width: 700px;
+		}
+		.bodywrapper .body{
+			padding-bottom: 40px;
+			background-color: #ffffff;
+			color: #3E4349;
+			padding: 0 30px 30px 30px;
+		}
+		.body h1, .body h2, .body h3, .body h4, .body h5, .body h6{
+			font-family: 'Garamond', 'Georgia', serif;
+			font-weight: normal;
+			margin: 30px 0px 10px 0px;
+			padding: 0;
+		}
+		.clear{
+			clear: both;
+		}
+		/* corner from https://highlightjs.org/ */
+		.corner{
+			position: fixed;
+			top: 0;
+			right: 0;
+			width: 16em;
+			height: 10em;
+			overflow: hidden;
+		}
+		.corner p{
+			background: #444;
+			margin: 0;
+			padding: 3px;
+			width: 16em;
+			transform: translate(50%, -50%) rotate(45deg) translate(0, 5em);
+			--webkit-transform: translate(50%, -50%) rotate(45deg) translate(0, 5em);
+		}
+		.corner a{
+			display: block;
+			padding: 0.2em 0;
+			text-align: center;
+			border: dashed white 1px;
+			font-weight: bold;
+			text-decoration: none;
+		}
+		a {
+			color: white;
+		}
+		code span{
+			display: inline-block;
+			margin: 2px 0px 2px 5px;
+		}
+	</style>
+</head>
+<body>
+	<div class="corner">
+		<p>
+			<a href="https://github.com/shispt/shell-read" target="_blank">See on GitHub</a>
+		</p>
+	</div>
+	<div class="documentwrapper">
+		<div class="bodywrapper">
+			<h1>Shell Read</h1>
+			<p>在命令行里随机读一条别人发的 status，或者自己提交一条</p>
+
+			<h2>使用</h2>
+			<p>读 status</p>
+			<pre><code class="bash">
+<span>$ sread</span>
+			</code></pre>
+			<p>发布一条 status</p>
+			<pre><code>
+<span>$ swrite "我的第一条 status"</span>
+<span># 打印帮助</span>
+<span>$ swrite -h</span>
+			</code></pre>
+
+			<h2>安装</h2>
+			<pre><code class="bash">
+<span>$ git clone https://github.com/shispt/shell-read</span>
+<span>$ python setup.py install</span>
+			</code></pre>
+			<p>安装后会有 $HOME/.shell_read.conf 配置文件</p>
+			<pre><code class="apache">
+<span>&#91;settings&#93;</span>
+<span>url : &lt;read-and-write-url&gt;</span>
+<span>nickname: anonymous</span>
+			</code></pre>
+
+			<h2>卸载</h2>
+			<pre><code class="bash">
+<span>$ bash uninstall.sh</span>
+			</code></pre>
+		</div>
+	</div>
+	<div class="clear"></div>
+	<div style="height:30px;"></div>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
