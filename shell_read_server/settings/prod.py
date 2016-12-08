@@ -6,11 +6,22 @@ DEBUG = False
 
 ALLOWED_HOSTS = [
     "localhost",
+    "shell_read.leonornot.org",
 ]
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'database',
+        'USER': 'username',
+        'PASSWORD': 'password',
+        'HOST': 'localhost',
+        'PORT': 3306,
+        'OPTIONS': {'charset': 'utf8'},
     }
+}
+
+REDIS = {
+    "host": "localhost",
+    "port": 6379,
 }
