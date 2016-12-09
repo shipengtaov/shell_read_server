@@ -5,8 +5,8 @@ from .base import *  # noqa
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    "localhost",
-    "shell_read.leonornot.org",
+    'localhost',
+    'shell-read.leonornot.org',
 ]
 
 DATABASES = {
